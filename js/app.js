@@ -1,3 +1,5 @@
+/*eslint strict: ["error", "global"]*/
+
 //Pike Place store
 
 var pikePlace = {
@@ -11,7 +13,7 @@ var pikePlace = {
   calcHourlyCustomers: function (minCustomers, maxCustomers){
 
     for (var i = 0; i < this.hoursOpen.length; i++) {
-      currentHourCustomers = Math.floor(Math.random() * 61) + 17;
+      currentHourCustomers = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
       this.hourlyCustomers.push(currentHourCustomers);
     }
     console.log(this.hourlyCustomers);
@@ -61,7 +63,7 @@ var seatacAirport = {
   calcHourlyCustomers: function (minCustomers, maxCustomers){
 
     for (var i = 0; i < this.hoursOpen.length; i++) {
-      currentHourCustomers = Math.floor(Math.random() * 18) + 6;
+      currentHourCustomers = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
       this.hourlyCustomers.push(currentHourCustomers);
     }
     console.log(this.hourlyCustomers);
@@ -112,7 +114,7 @@ var southCenter = {
   calcHourlyCustomers: function (minCustomers, maxCustomers){
 
     for (var i = 0; i < this.hoursOpen.length; i++) {
-      currentHourCustomers = Math.floor(Math.random() * 27) + 11;
+      currentHourCustomers = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
       this.hourlyCustomers.push(currentHourCustomers);
     }
     console.log(this.hourlyCustomers);
@@ -163,7 +165,7 @@ var bellevueSquare = {
   calcHourlyCustomers: function (minCustomers, maxCustomers){
 
     for (var i = 0; i < this.hoursOpen.length; i++) {
-      currentHourCustomers = Math.floor(Math.random() * 28) + 20;
+      currentHourCustomers = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
       this.hourlyCustomers.push(currentHourCustomers);
     }
     console.log(this.hourlyCustomers);
@@ -214,7 +216,7 @@ var alki = {
   calcHourlyCustomers: function (minCustomers, maxCustomers){
 
     for (var i = 0; i < this.hoursOpen.length; i++) {
-      currentHourCustomers = Math.floor(Math.random() * 21) + 3;
+      currentHourCustomers = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
       this.hourlyCustomers.push(currentHourCustomers);
     }
     console.log(this.hourlyCustomers);
