@@ -1,4 +1,4 @@
-/*eslint strict: ["error", "global"]*/
+'use strict';
 
 //Pike Place store
 
@@ -10,29 +10,29 @@ var pikePlace = {
   hourlyCustomers: [],
   hourlySales: [],
   hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
-  calcHourlyCustomers: function (minCustomers, maxCustomers){
+  calcHourlyCustomers: function (){
 
     for (var i = 0; i < this.hoursOpen.length; i++) {
-      currentHourCustomers = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
+      var currentHourCustomers = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
       this.hourlyCustomers.push(currentHourCustomers);
     }
     console.log(this.hourlyCustomers);
   },
 
-  calcHourlySales: function (avgItemBought, hourlyCustomers){
+  calcHourlySales: function (){
 
     for (var i = 0; i < this.hourlyCustomers.length; i++) {
-      currentHourSales = Math.floor(this.hourlyCustomers[i] * this.avgItemBought);
+      var currentHourSales = Math.floor(this.hourlyCustomers[i] * this.avgItemBought);
       this.hourlySales.push(currentHourSales);
     }
     console.log(this.hourlySales);
   },
 
-  render: function(hourlySales){
+  render: function(){
     for (var i = 0; i < this.hourlySales.length; i++) {
-      newLi = document.createElement('li');
+      var newLi = document.createElement('td');
       newLi.value = this.hourlySales[i];
-      newLi.textContent = this.hoursOpen[i] + ': ' + this.hourlySales[i] + ' cookies';
+      newLi.textContent = this.hourlySales[i];
       storeOne.appendChild(newLi);
     }
     for (var i = 0; i < this.hourlySales.length; i++) {
@@ -40,9 +40,9 @@ var pikePlace = {
     }
     console.log(this.total);
 
-    newLi = document.createElement('li');
+    var newLi = document.createElement('td');
     newLi.value = this.total;
-    newLi.textContent = 'Total: ' + this.total + ' cookies';
+    newLi.textContent = this.total;
     storeOne.appendChild(newLi);
   }
 };
@@ -60,29 +60,29 @@ var seatacAirport = {
   hourlyCustomers: [],
   hourlySales: [],
   hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
-  calcHourlyCustomers: function (minCustomers, maxCustomers){
+  calcHourlyCustomers: function (){
 
     for (var i = 0; i < this.hoursOpen.length; i++) {
-      currentHourCustomers = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
+      var currentHourCustomers = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
       this.hourlyCustomers.push(currentHourCustomers);
     }
     console.log(this.hourlyCustomers);
   },
 
-  calcHourlySales: function (avgItemBought, hourlyCustomers){
+  calcHourlySales: function (){
 
     for (var i = 0; i < this.hourlyCustomers.length; i++) {
-      currentHourSales = Math.floor(this.hourlyCustomers[i] * this.avgItemBought);
+      var currentHourSales = Math.floor(this.hourlyCustomers[i] * this.avgItemBought);
       this.hourlySales.push(currentHourSales);
     }
     console.log(this.hourlySales);
   },
 
-  render: function(hourlySales){
+  render: function(){
     for (var i = 0; i < this.hourlySales.length; i++) {
-      newLi = document.createElement('li');
+      var newLi = document.createElement('td');
       newLi.value = this.hourlySales[i];
-      newLi.textContent = this.hoursOpen[i] + ': ' + this.hourlySales[i] + ' cookies';
+      newLi.textContent = this.hourlySales[i];
       storeTwo.appendChild(newLi);
     }
     for (var i = 0; i < this.hourlySales.length; i++) {
@@ -90,9 +90,9 @@ var seatacAirport = {
     }
     console.log(this.total);
 
-    newLi = document.createElement('li');
+    var newLi = document.createElement('td');
     newLi.value = this.total;
-    newLi.textContent = 'Total: ' + this.total + ' cookies';
+    newLi.textContent = this.total;
     storeTwo.appendChild(newLi);
   }
 };
@@ -111,29 +111,29 @@ var southCenter = {
   hourlyCustomers: [],
   hourlySales: [],
   hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
-  calcHourlyCustomers: function (minCustomers, maxCustomers){
+  calcHourlyCustomers: function (){
 
     for (var i = 0; i < this.hoursOpen.length; i++) {
-      currentHourCustomers = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
+      var currentHourCustomers = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
       this.hourlyCustomers.push(currentHourCustomers);
     }
     console.log(this.hourlyCustomers);
   },
 
-  calcHourlySales: function (avgItemBought, hourlyCustomers){
+  calcHourlySales: function (){
 
     for (var i = 0; i < this.hourlyCustomers.length; i++) {
-      currentHourSales = Math.floor(this.hourlyCustomers[i] * this.avgItemBought);
+      var currentHourSales = Math.floor(this.hourlyCustomers[i] * this.avgItemBought);
       this.hourlySales.push(currentHourSales);
     }
     console.log(this.hourlySales);
   },
 
-  render: function(hourlySales){
+  render: function(){
     for (var i = 0; i < this.hourlySales.length; i++) {
-      newLi = document.createElement('li');
+      var newLi = document.createElement('td');
       newLi.value = this.hourlySales[i];
-      newLi.textContent = this.hoursOpen[i] + ': ' + this.hourlySales[i] + ' cookies';
+      newLi.textContent = this.hourlySales[i];
       storeThree.appendChild(newLi);
     }
     for (var i = 0; i < this.hourlySales.length; i++) {
@@ -141,9 +141,9 @@ var southCenter = {
     }
     console.log(this.total);
 
-    newLi = document.createElement('li');
+    var newLi = document.createElement('td');
     newLi.value = this.total;
-    newLi.textContent = 'Total: ' + this.total + ' cookies';
+    newLi.textContent = this.total;
     storeThree.appendChild(newLi);
   }
 };
@@ -162,29 +162,29 @@ var bellevueSquare = {
   hourlyCustomers: [],
   hourlySales: [],
   hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
-  calcHourlyCustomers: function (minCustomers, maxCustomers){
+  calcHourlyCustomers: function (){
 
     for (var i = 0; i < this.hoursOpen.length; i++) {
-      currentHourCustomers = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
+      var currentHourCustomers = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
       this.hourlyCustomers.push(currentHourCustomers);
     }
     console.log(this.hourlyCustomers);
   },
 
-  calcHourlySales: function (avgItemBought, hourlyCustomers){
+  calcHourlySales: function (){
 
     for (var i = 0; i < this.hourlyCustomers.length; i++) {
-      currentHourSales = Math.floor(this.hourlyCustomers[i] * this.avgItemBought);
+      var currentHourSales = Math.floor(this.hourlyCustomers[i] * this.avgItemBought);
       this.hourlySales.push(currentHourSales);
     }
     console.log(this.hourlySales);
   },
 
-  render: function(hourlySales){
+  render: function(){
     for (var i = 0; i < this.hourlySales.length; i++) {
-      newLi = document.createElement('li');
+      var newLi = document.createElement('td');
       newLi.value = this.hourlySales[i];
-      newLi.textContent = this.hoursOpen[i] + ': ' + this.hourlySales[i] + ' cookies';
+      newLi.textContent = this.hourlySales[i];
       storeFour.appendChild(newLi);
     }
     for (var i = 0; i < this.hourlySales.length; i++) {
@@ -192,9 +192,9 @@ var bellevueSquare = {
     }
     console.log(this.total);
 
-    newLi = document.createElement('li');
+    var newLi = document.createElement('td');
     newLi.value = this.total;
-    newLi.textContent = 'Total: ' + this.total + ' cookies';
+    newLi.textContent = this.total;
     storeFour.appendChild(newLi);
   }
 };
@@ -213,29 +213,29 @@ var alki = {
   hourlyCustomers: [],
   hourlySales: [],
   hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
-  calcHourlyCustomers: function (minCustomers, maxCustomers){
+  calcHourlyCustomers: function (){
 
     for (var i = 0; i < this.hoursOpen.length; i++) {
-      currentHourCustomers = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
+      var currentHourCustomers = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
       this.hourlyCustomers.push(currentHourCustomers);
     }
     console.log(this.hourlyCustomers);
   },
 
-  calcHourlySales: function (avgItemBought, hourlyCustomers){
+  calcHourlySales: function (){
 
     for (var i = 0; i < this.hourlyCustomers.length; i++) {
-      currentHourSales = Math.floor(this.hourlyCustomers[i] * this.avgItemBought);
+      var currentHourSales = Math.floor(this.hourlyCustomers[i] * this.avgItemBought);
       this.hourlySales.push(currentHourSales);
     }
     console.log(this.hourlySales);
   },
 
-  render: function(hourlySales){
+  render: function(){
     for (var i = 0; i < this.hourlySales.length; i++) {
-      newLi = document.createElement('li');
+      var newLi = document.createElement('td');
       newLi.value = this.hourlySales[i];
-      newLi.textContent = this.hoursOpen[i] + ': ' + this.hourlySales[i] + ' cookies';
+      newLi.textContent = this.hourlySales[i];
       storeFive.appendChild(newLi);
     }
     for (var i = 0; i < this.hourlySales.length; i++) {
@@ -243,9 +243,9 @@ var alki = {
     }
     console.log(this.total);
 
-    newLi = document.createElement('li');
+    var newLi = document.createElement('td');
     newLi.value = this.total;
-    newLi.textContent = 'Total: ' + this.total + ' cookies';
+    newLi.textContent = this.total;
     storeFive.appendChild(newLi);
   }
 };

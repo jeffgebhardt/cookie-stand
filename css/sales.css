@@ -1,12 +1,31 @@
-#floatLeft{
-  float: left;
-  padding-right: 10px;
-  padding-left: 10px;
-  border-left: 2px solid black;
-  border-right: 2px solid black;
+#container {
+  width: 1000px;
+  margin: 0 auto;
+  text-align: left;
 }
 
-h2{
+body {
+  background-color: gray;
+  width: auto;
+  text-align: center;
+}
+
+table {
+  padding-left: 55px;
+}
+
+th{
+  text-align: left;
+  background-color: black;
+  color: white;
+}
+td {
+  text-align: center;
+  border: 2px solid black;
+  width: 40px;
+}
+
+h1{
   text-align: center;
   border-bottom: 2px solid black;
 }
