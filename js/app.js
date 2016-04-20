@@ -78,6 +78,10 @@ var formInput = function(event){
 
   storeList[i].makeRow();
 
+  event.target.storeNameBox.value = null;
+  event.target.minCustomersBox.value = null;
+  event.target.maxCustomersBox.value = null;
+  event.target.avgItemBoughtBox.value = null;
 };
 
 newStoreForm.addEventListener('submit', formInput);
