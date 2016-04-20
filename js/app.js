@@ -62,20 +62,22 @@ for ( var i = 0 ; i < storeList.length ; i ++){
   storeList[i].makeRow();
 }
 
-var storeNameBox = document.getElementById('storeNameBox');
-var minCustomersBox = document.getElementById('minCustomersBox');
-var maxCustomersBox = document.getElementById('maxCustomersBox');
-var avgItemBoughtBox = document.getElementById('avgItemBoughtBox');
+var newStoreForm = document.getElementById('newStoreInput');
 
-var formInput = function(storeNameBox, minCustomersBox, maxCustomersBox, avgItemBoughtBox){
+var formInput = function(event){
   event.preventDefault();
 
-  storeList.push(new salmonStore(this.storeNameBox, this.minCustomersBox, this.maxCustomersBox, this.avgItemBoughtBox));
+  var storeNameBox = event.target.storeNameBox.value;
 
-  for ( var i = 0 ; i < storeList.length ; i ++){
+  var minCustomersBox = parseInt(event.target.minCustomersBox.value);
+  var maxCustomersBox = parseInt(event.target.maxCustomersBox.value);
+  var avgItemBoughtBox = parseFloat(event.target.avgItemBoughtBox.value);
 
-    storeList[i].makeRow();
-  }
+  console.log(storeNameBox + ' ' + minCustomersBox + ' ' + maxCustomersBox + ' ' + avgItemBoughtBox);
+  storeList.push(new salmonStore(storeNameBox, minCustomersBox, maxCustomersBox, avgItemBoughtBox));
+
+  storeList[i].makeRow();
+
 };
 
-document.getElementById('submit').addEventListener('click', formInput);
+newStoreForm.addEventListener('submit', formInput);
