@@ -71,12 +71,16 @@ var formInput = function(event){
 
   var minCustomersBox = parseInt(event.target.minCustomersBox.value);
   var maxCustomersBox = parseInt(event.target.maxCustomersBox.value);
-  var avgItemBoughtBox = parseFloat(event.target.avgItemBoughtBox.value);
+  var avgItemBoughtBox = event.target.avgItemBoughtBox.value;
 
   console.log(storeNameBox + ' ' + minCustomersBox + ' ' + maxCustomersBox + ' ' + avgItemBoughtBox);
   storeList.push(new salmonStore(storeNameBox, minCustomersBox, maxCustomersBox, avgItemBoughtBox));
 
   storeList[i].makeRow();
+  event.target.storeNameBox.value = null;
+  event.target.minCustomersBox.value = null ;
+  event.target.maxCustomersBox.value = null ;
+  event.target.avgItemBoughtBox.value = null ;
 
   event.target.storeNameBox.value = null;
   event.target.minCustomersBox.value = null;
