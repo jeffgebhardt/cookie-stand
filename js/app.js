@@ -61,3 +61,21 @@ storeList.push(new salmonStore('Alki', 3, 24, 2.6));
 for ( var i = 0 ; i < storeList.length ; i ++){
   storeList[i].makeRow();
 }
+
+var storeNameBox = document.getElementById('storeNameBox');
+var minCustomersBox = document.getElementById('minCustomersBox');
+var maxCustomersBox = document.getElementById('maxCustomersBox');
+var avgItemBoughtBox = document.getElementById('avgItemBoughtBox');
+
+var formInput = function(storeNameBox, minCustomersBox, maxCustomersBox, avgItemBoughtBox){
+  event.preventDefault();
+
+  storeList.push(new salmonStore(this.storeNameBox, this.minCustomersBox, this.maxCustomersBox, this.avgItemBoughtBox));
+
+  for ( var i = 0 ; i < storeList.length ; i ++){
+
+    storeList[i].makeRow();
+  }
+};
+
+document.getElementById('submit').addEventListener('click', formInput);
