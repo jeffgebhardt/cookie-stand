@@ -52,19 +52,6 @@ function salmonStore (storeName, minCustomers, maxCustomers, avgItemBought) {
   this.calcHourlySales();
 };
 
-// var formInput = function(){
-//   this.storeNameBox = document.getElementById('storeNameBox').value;
-//   this.minCustomersBox = parseInt(document.getElementById('minCustomersBox').value);
-//   this.maxCustomersBox = parseInt(document.getElementById('maxCustomersBox').value);
-//   this.avgItemBoughtBox = parseInt(document.getElementById('avgItemBoughtBox').value);
-//
-//   storeList.push(new salmonStore(this.storeNameBox, this.minCustomersBox, this.maxCustomersBox, this.avgItemBoughtBox));
-// };
-//
-// document.getElementById('submit').onclick = function() {
-//   this.formInput();
-// };
-
 storeList.push(new salmonStore('Pike Place', 17, 88, 5.2));
 storeList.push(new salmonStore('Seatac Airport', 6, 18, 1.2));
 storeList.push(new salmonStore('South Center', 11, 38, 1.9));
@@ -74,3 +61,21 @@ storeList.push(new salmonStore('Alki', 3, 24, 2.6));
 for ( var i = 0 ; i < storeList.length ; i ++){
   storeList[i].makeRow();
 }
+
+var storeNameBox = document.getElementById('storeNameBox');
+var minCustomersBox = document.getElementById('minCustomersBox');
+var maxCustomersBox = document.getElementById('maxCustomersBox');
+var avgItemBoughtBox = document.getElementById('avgItemBoughtBox');
+
+var formInput = function(storeNameBox, minCustomersBox, maxCustomersBox, avgItemBoughtBox){
+  event.preventDefault();
+
+  storeList.push(new salmonStore(this.storeNameBox, this.minCustomersBox, this.maxCustomersBox, this.avgItemBoughtBox));
+
+  for ( var i = 0 ; i < storeList.length ; i ++){
+
+    storeList[i].makeRow();
+  }
+};
+
+document.getElementById('submit').addEventListener('click', formInput);
